@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业：命令行交互工具介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0078d7;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-left: 5px solid #0078d7;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 14px;
+            font-family: Consolas, "Courier New", monospace;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0078d7;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>命令行交互工具</h1>
+    </header>
+    <main>
+        <p>这是一个用 Python 编写的命令行工具，旨在模拟打字机效果并提供简单的交互功能。</p>
+        <h2>功能介绍</h2>
+        <ul>
+            <li>支持通过 <code>-v</code> 或 <code>--version</code> 参数查看工具版本。</li>
+            <li>支持通过 <code>-p</code> 或 <code>--prompt</code> 参数自定义输入提示符。</li>
+            <li>模拟打字机效果，逐字符输出用户输入的内容。</li>
+            <li>支持处理用户通过 <code>Ctrl+C</code> 中断程序的情况。</li>
+        </ul>
+        <h2>使用方法</h2>
+        <pre>python chat_cli.py [options]</pre>
+        <p>可用选项：</p>
+        <ul>
+            <li><code>-v</code>, <code>--version</code>：显示工具版本号。</li>
+            <li><code>-p</code>, <code>--prompt</code>：设置输入提示符（默认为 <code>&gt; </code>）。</li>
+        </ul>
+        <h2>示例</h2>
+        <p>运行以下命令查看版本：</p>
+        <pre>python chat_cli.py --version</pre>
+        <p>运行以下命令自定义提示符：</p>
+        <pre>python chat_cli.py --prompt "输入内容: "</pre>
+        <h2>代码实现</h2>
+        <p>该工具的核心功能包括：</p>
+        <ol>
+            <li>使用 <code>argparse</code> 模块解析命令行参数。</li>
+            <li>通过 <code>simulate_typing</code> 函数实现逐字符输出的打字机效果。</li>
+            <li>捕获 <code>KeyboardInterrupt</code> 异常，优雅退出程序。</li>
+        </ol>
+        <h2>注意事项</h2>
+        <p>在运行程序时，请确保已安装 Python 环境，并在终端中运行命令。</p>
+    </main>
+    <footer>
+        <p>© 2025 命令行交互工具文档</p>
+    </footer>
+</body>
+</html>
