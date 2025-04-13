@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Dataset Analysis Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        h2 {
+            color: #0056b3;
+            text-align: left;
+        }
+        .structured-section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .sub-table th {
+            background-color: #f8f9fa;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris数据集分析报告</h1>
+    <h2>基本信息</h2>
+    <ul>
+        <li>行数: 150</li>
+        <li>列数: 5</li>
+    </ul>
+    
+
+    
+
+    
+    <div class="structured-section">
+        <h3>类别分布</h3>
+        <table>
+            <tr>
+                
+                <th>类别</th>
+                
+                <th>数量</th>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>0</td>
+                
+                <td>50</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>1</td>
+                
+                <td>50</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>2</td>
+                
+                <td>50</td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    
+
+    
+    <div class="structured-section">
+        <h3>数据类型</h3>
+        <table>
+            <tr>
+                
+                <th>列名</th>
+                
+                <th>数据类型</th>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>sepal length (cm)</td>
+                
+                <td>float64</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>sepal width (cm)</td>
+                
+                <td>float64</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>petal length (cm)</td>
+                
+                <td>float64</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>petal width (cm)</td>
+                
+                <td>float64</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>species</td>
+                
+                <td>int64</td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    
+
+    
+    <div class="structured-section">
+        <h3>缺失值统计</h3>
+        <table>
+            <tr>
+                
+                <th>列名</th>
+                
+                <th>缺失值数量</th>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>sepal length (cm)</td>
+                
+                <td>0</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>sepal width (cm)</td>
+                
+                <td>0</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>petal length (cm)</td>
+                
+                <td>0</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>petal width (cm)</td>
+                
+                <td>0</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>species</td>
+                
+                <td>0</td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    
+
+    <div class="structured-section">
+        <h3>描述性统计</h3>
+        <table>
+            <tr>
+                <th>特征</th>
+                <th>最小值</th>
+                <th>最大值</th>
+                <th>均值</th>
+                <th>标准差</th>
+            </tr>
+            
+            <tr>
+                <td>sepal length (cm)</td>
+                <td>4.3</td>
+                <td>7.9</td>
+                <td>5.843333333333334</td>
+                <td>0.8280661279778629</td>
+            </tr>
+            
+            <tr>
+                <td>sepal width (cm)</td>
+                <td>2.0</td>
+                <td>4.4</td>
+                <td>3.0573333333333337</td>
+                <td>0.435866284936698</td>
+            </tr>
+            
+            <tr>
+                <td>petal length (cm)</td>
+                <td>1.0</td>
+                <td>6.9</td>
+                <td>3.7580000000000005</td>
+                <td>1.7652982332594667</td>
+            </tr>
+            
+            <tr>
+                <td>petal width (cm)</td>
+                <td>0.1</td>
+                <td>2.5</td>
+                <td>1.1993333333333336</td>
+                <td>0.7622376689603465</td>
+            </tr>
+            
+            <tr>
+                <td>species</td>
+                <td>0.0</td>
+                <td>2.0</td>
+                <td>1.0</td>
+                <td>0.8192319205190405</td>
+            </tr>
+            
+        </table>
+    </div>
+
+    
+
+    <h2>特征分布图</h2>
+    <img src="iris_feature_distribution.png" alt="Feature Distribution">
+</body>
+</html>
