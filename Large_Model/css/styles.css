@@ -1,0 +1,141 @@
+/* 重置及整体布局 */
+body {
+    margin: 0;
+    font-family: -apple-system, Helvetica Neue, sans-serif;
+    background: #ededed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 消息展示区域 */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #e5e5e5;
+}
+
+/* 消息气泡通用样式 */
+.message {
+    display: block; /* 保持块级元素 */
+    width: fit-content; /* 宽度根据内容自适应 */
+    max-width: 70%; /* 限制最大宽度 */
+    margin: 10px 0; /* 上下间距 */
+    padding: 12px 15px;
+    border-radius: 8px;
+    position: relative;
+    word-break: break-word; /* 防止长单词溢出 */
+    animation: fadeIn 0.3s ease;
+}
+
+/* 用户消息样式 */
+.user-message {
+    background: #9eea6a;
+    margin-left: auto;
+    border-top-right-radius: 2px;  
+    text-align: left; /* 确保文本左对齐 */
+}
+
+/* 机器人消息样式 */
+.bot-message {
+    background: white;
+    margin-right: auto;
+    border-top-left-radius: 2px;
+    text-align: left;
+}
+
+/* 输入区域 */
+.input-area {
+    display: flex;
+    align-items: flex-end; /* 子元素垂直方向对齐到容器底部 */
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: white;
+    gap: 10px;
+}
+
+/* 输入框样式 */
+#message-input {
+    flex: 1;
+    height: 20px;
+    max-height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    resize: none;
+    line-height: 1.5;
+    font-size: 16px;
+    overflow-y: auto;
+}
+
+/* 发送按钮样式 */
+#send-btn {
+    align-self: flex-end; /* 确保按钮自身对齐到容器底部 */
+    width: 60px;
+    height: 40px;
+    background: #07c160;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#send-btn:hover {
+    opacity: 0.9;
+}
+
+/* 加载动画 */
+.typing-indicator {
+    display: inline-block;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #999;
+    animation: dotFlashing 1s infinite linear;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+.dot-flashing::before {
+    left: -10px;
+    animation: dotFlashing 1s infinite linear;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 10px;
+    animation: dotFlashing 1s infinite linear;
+    animation-delay: 0.2s;
+}
+
+/* 渐入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 点状加载动画 */
+@keyframes dotFlashing {
+    0% { background-color: #999; }
+    50%, 100% { background-color: #ddd; }
+}
