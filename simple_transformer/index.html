@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Transformer - 基于Transformer的机器翻译模型</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            background: white;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        pre {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background-color: var(--dark-bg);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Simple Transformer</h1>
+            <p>基于PyTorch实现的Transformer机器翻译模型</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="card">
+            <h2>项目简介</h2>
+            <p>本项目是基于论文"Attention Is All You Need"实现的Transformer模型，专注于中英机器翻译任务。使用PyTorch框架和PyTorch Lightning进行训练，提供了完整的模型实现和训练流程。</p>
+            <p>项目包含标准的Transformer架构组件：多头注意力机制、位置编码、位置前馈网络等，并针对翻译任务进行了优化。</p>
+        </section>
+        
+        <section class="card">
+            <h2>模型架构</h2>
+            <p>模型遵循原始Transformer论文设计，主要包含以下组件：</p>
+            <ul>
+                <li><strong>多头注意力机制(MultiHeadAttention)</strong>：8个注意力头，模型维度512</li>
+                <li><strong>位置前馈网络(PositionWiseFeedForward)</strong>：内部维度2048</li>
+                <li><strong>位置编码(PositionalEncoding)</strong>：正弦/余弦位置编码</li>
+                <li><strong>编码器-解码器结构</strong>：6层编码器，6层解码器</li>
+                <li><strong>残差连接和层归一化</strong>：每个子层后应用</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h2>功能特点</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>完整实现</h3>
+                    <p>从底层实现了Transformer所有核心组件，代码结构清晰，注释完整。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>高效训练</h3>
+                    <p>使用PyTorch Lightning框架，支持多GPU训练、混合精度训练等加速技术。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>训练监控</h3>
+                    <p>集成TensorBoard日志、学习率监控、模型检查点和早停机制。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>中英翻译</h3>
+                    <p>针对中英翻译任务优化，使用translation2019zh数据集。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>使用方法</h2>
+            <h3>安装依赖</h3>
+            <pre><code>pip install -r requirements.txt</code></pre>
+            
+            <h3>训练模型</h3>
+            <pre><code>python train.py</code></pre>
+            <p>训练配置可在train.py中修改，包括模型参数、优化器设置等。</p>
+            
+            <h3>进行推理</h3>
+            <pre><code>python inference.py</code></pre>
+            <p>使用训练好的模型进行翻译推理。</p>
+        </section>
+        
+        <section class="card">
+            <h2>依赖环境</h2>
+            <ul>
+                <li>Python 3.7+</li>
+                <li>PyTorch >= 2.0.0</li>
+                <li>PyTorch Lightning == 2.1.0</li>
+                <li>NumPy >= 1.21.0</li>
+                <li>tqdm >= 4.0.0</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Simple Transformer项目 | 基于PyTorch实现的Transformer模型</p>
+        </div>
+    </footer>
+</body>
+</html>

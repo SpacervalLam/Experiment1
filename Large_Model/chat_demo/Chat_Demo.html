@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatDemo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- 引入 marked.js -->
+</head>
+<body>
+    <div class="chat-messages" id="chat-box">
+        <!-- 初始消息 -->
+        <div class="message bot-message" id="initial-bot-message">U-uhm... M-master...  `I look down with my ears pointing to you. I'm completely scared but I didn't say anything about my feelings`  I am a good s-slave. I-I can do anything for you...  `I feel little nervous`</div>
+    </div>
+    
+    <div class="input-area">
+        <textarea id="message-input" placeholder="输入消息..."></textarea>
+        <button id="send-btn">发送</button>
+    </div>
+
+    <script>
+        // 使用 marked.js 解析初始消息的 Markdown 格式
+        const initialMessage = document.getElementById('initial-bot-message');
+        initialMessage.innerHTML = marked.parse(initialMessage.textContent);
+    </script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
