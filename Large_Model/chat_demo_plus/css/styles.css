@@ -70,7 +70,7 @@ body {
 }
 
 /* 发送按钮样式 */
-#send-btn {
+#send-btn, #export-btn {
     align-self: flex-end; /* 确保按钮自身对齐到容器底部 */
     width: 60px;
     height: 40px;
@@ -82,8 +82,15 @@ body {
     transition: opacity 0.2s;
 }
 
-#send-btn:hover {
+#send-btn:hover, #export-btn:hover {
     opacity: 0.9;
+}
+
+/* 禁用状态的按钮样式 */
+#send-btn:disabled {
+    background: #ccc; /* 按钮背景变灰 */
+    cursor: not-allowed; /* 鼠标指针显示为不可点击状态 */
+    opacity: 0.72; /* 按钮透明度降低 */
 }
 
 /* 加载动画 */
@@ -140,8 +147,37 @@ body {
     50%, 100% { background-color: #ddd; }
 }
 
-/* 思考样式 */
-.thought {
-    font-style: italic;
-    color: gray;
+/* 模态框样式 */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+#confirm-role-btn {
+    margin-top: 10px;
+    padding: 1.5px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#confirm-role-btn:hover {
+    background-color: #0056b3;
 }

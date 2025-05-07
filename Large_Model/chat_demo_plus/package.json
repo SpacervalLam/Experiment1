@@ -1,0 +1,10 @@
+{
+    "name": "chat_demo",
+    "version": "1.0.0",
+    "description": "A simple chat demo with a built-in local server.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {}
+}

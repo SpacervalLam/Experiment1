@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatDemo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- 引入 marked.js -->
+</head>
+<body>
+    <!-- 角色选择模态窗口 -->
+    <div id="role-modal" class="modal">
+        <div class="modal-content">
+            <h2>请选择一个角色</h2>
+            <select id="modal-role-select">
+                <option value="Silvia">Silvia</option>
+                <option value="Yanami_Anna">Yanami Anna</option>
+            </select>
+            <button id="confirm-role-btn">confirm</button>
+        </div>
+    </div>
+
+    <!-- 聊天消息区域 -->
+    <div class="chat-messages" id="chat-box">
+        
+    </div>
+    
+    <!-- 输入区域 -->
+    <div class="input-area">
+        <textarea id="message-input" placeholder="输入消息..."></textarea>
+        <button id="send-btn">Send</button>
+        <button id="export-btn">Export</button> 
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
